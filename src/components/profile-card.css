@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+root {
+    background-image: radial-gradient(circle, rgba(131, 58, 180, 1) 0%, rgba(252, 176, 69, 1) 100%)
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+}
