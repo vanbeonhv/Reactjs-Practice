@@ -8,8 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import StudentList from "./components/StudentList";
 import ProfileCard from "./components/ProfileCard";
-import LoginForm from "./components/LoginForm";
+import BmiCalculator from "./components/BmiCalculator";
+import Calculator from "./components/Calculator";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<LoginForm />);
+root.render(<Calculator />);

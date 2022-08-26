@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-c {
+    background: rgba(10, 218, 218, 0.568);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 35px 35px 35px 35px 35px 35px;
+    justify-content: center;
+    height: 100vh;
+    align-content: center;
+    border-radius: 50%;
+}
+
+.result {
+    background: rgb(39, 35, 35);
+    grid-column: 1 / 5;
+    height: 100%;
+    margin: 0;
+}
+.wrapper > div {
+    cursor: default;
+}
+
+button {
+    cursor: default;
+    width: 50px;
+    height: 100%;
+    border: 1px solid rgba(145, 140, 140, 0.356);
+}
+
+button:active {
+    opacity: 0.7;
+}
+.big-btn {
+    grid-column: 4; 
+    grid-row: 3 / 7;
+}
+
+.big-btn-1 {
+    background-color: orange;
+    height: 100%;
+}
+
+.func-pad {
+    background: rgb(223, 218, 218);
+}
