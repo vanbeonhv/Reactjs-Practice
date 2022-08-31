@@ -10,7 +10,10 @@ import StudentList from "./components/StudentList";
 import ProfileCard from "./components/ProfileCard";
 import BmiCalculator from "./components/BmiCalculator";
 import Calculator from "./components/Calculator";
+import App2 from "./components/PracticeUnmount/App2";
+import App3 from "./components/UserLogin/App3";
+import { Collapse } from "bootstrap";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<Calculator />);
+root.render(<Collapse />);
