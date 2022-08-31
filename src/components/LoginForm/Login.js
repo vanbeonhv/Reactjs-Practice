@@ -7,7 +7,7 @@ export default class Login extends Component {
     super(props);
     this.state = {
       form: {
-        name: "",
+        userName: "",
         password: "",
         isRemember: false,
       },
@@ -19,9 +19,8 @@ export default class Login extends Component {
   handleChange = (e) => {
     this.setState(
       (state) => {
-        console.log(state);
         const { form } = state;
-        form[e.target.name] = e.target.value;
+        form[e.target.userName] = e.target.value;
         return { form };
       },
       () => this.checkValidForm()
@@ -29,18 +28,30 @@ export default class Login extends Component {
   };
 
   checkValidForm = () => {
-    this.setState({ isRemember: "" });
+    const { userName, password } = this.state.form;
+    const value = userName && password;
+    this.setState({ isValid: value });
+  };
+
+  handleSubmit = () => {
+    if (this.state.isValid) {
+      this.setState({ isLoggedIn: true });
+    }
+  };
+
+  handleLogout = () => {
+    this.setState({ isLoggedIn: false });
   };
 
   render() {
     return (
       <div className="login-page">
         <div className="form">
-          <form className="register-form">
+          <form className="login-form">
             <input
               type="text"
-              placeholder="name"
-              value={this.state.form.name}
+              placeholder="username"
+              value={this.state.form.userName}
               onChange={this.handleChange}
             />
             <input
@@ -49,16 +60,7 @@ export default class Login extends Component {
               value={this.state.form.password}
               onChange={this.handleChange}
             />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p className="message">
-              Already registered? <a href="#">Sign In</a>
-            </p>
-          </form>
-          <form className="login-form">
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
-            <button>login</button>
+            <button onChange={this.handleSubmit}>login</button>
             <p className="message">
               Not registered? <a href="#">Create an account</a>
             </p>
