@@ -10,7 +10,8 @@ import StudentList from "./components/StudentList";
 import ProfileCard from "./components/ProfileCard";
 import BmiCalculator from "./components/BmiCalculator";
 import Calculator from "./components/Calculator";
+import ToDoList from "./components/ToDoApp/ToDoList";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<Calculator />);
+root.render(<ToDoList />);
