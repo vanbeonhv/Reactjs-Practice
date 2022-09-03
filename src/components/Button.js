@@ -8,7 +8,7 @@ const Button = (props) => {
       onClick={props.onClick}
       style={props.style}
     >
-      {props.name}
+      {props.label}
     </button>
   );
 };
