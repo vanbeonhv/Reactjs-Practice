@@ -22,20 +22,24 @@ export default class StudentManager extends Component {
         () => this.checkValidForm()); //Confused. Need to revisit!! 
     }
     handleSubmit = () => {
-        const {studentList, form} = this.state;
-        studentList.push({name: form.name, phone: form.phone, email: form.email})
-        this.setState({studentList: studentList})
+        const {studentList, form, isValid} = this.state;
+        if (isValid) {
+            studentList.push({name: form.name, phone: form.phone, email: form.email})
+            this.setState({studentList: studentList})
+            console.log(isValid);   
+         } else {
+             alert('Pls fill the box')
+         }
     }
     checkValidForm = () => {
         const {name, phone, email} = this.state.form;
-        let value = name && phone && email;
+        let value = !!(name && phone && email); // !! to convert value from string to boolean
         this.setState({isValid: value});
-        console.log(this.state.isValid);
     }
     //  VALIDATE TIME!
     render() {
         return (
-            <div className='bg-light '>
+            <div className='bg-light vh-100 px-5'>
                 <h1>Student List</h1>
                 <div className='d-flex my-1'>
                     <p className='m-0' style={{width: '60px'}}>Name:</p> 
@@ -70,18 +74,6 @@ export default class StudentManager extends Component {
                                 <td >some btns</td>
                             </tr>
                         ))}
-                        <tr>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                        </tr>
-                        <tr>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                            <td>Nice</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
