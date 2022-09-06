@@ -9,8 +9,10 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Cal from "./components/Cal/Cal";
 import ToDoList2 from "./components/ToDoApp2/ToDoList2";
 import ToDoList3 from "./components/ToDoApp2/ToDoList3";
-import StudentManager from './components/StudentManager/StudentManager';
+import StudentManager from "./components/StudentManager/StudentManager";
+import UseStateDemo from "./components/DemoLopHoc/Hook/UseStateDemo";
+import CarSelector from "./components/DemoLopHoc/Hook/CarSelector";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<StudentManager />);
+root.render(<CarSelector />);
