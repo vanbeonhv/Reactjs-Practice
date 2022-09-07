@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "../Button";
 
 export default class StudentManager extends Component {
   constructor(props) {
