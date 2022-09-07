@@ -48,11 +48,11 @@ export default class StudentManager extends Component {
   };
 
   handleEdit = (studentSelected, index) => {
-    this.setState({
-      form: JSON.parse(JSON.stringify(studentSelected)),
-      indexSelected: index,
-    });
-    console.log(studentSelected, index);
+    // this.setState({
+    //   form: JSON.parse(JSON.stringify(studentSelected)),
+    //   indexSelected: index,
+    // });
+    // console.log(studentSelected, index);
   };
   //  VALIDATE TIME!
   render() {

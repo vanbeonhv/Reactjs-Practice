@@ -10,10 +10,9 @@ import Cal from "./components/Cal/Cal";
 import ToDoList2 from "./components/ToDoApp2/ToDoList2";
 import ToDoList3 from "./components/ToDoApp2/ToDoList3";
 import StudentManager from "./components/StudentManager/StudentManager";
-import Selector from "./components/EffectDemo/Selector";
-import TestClass from "./components/EffectDemo/TestClass";
-import MyClock from "./components/HookPractice/MyClock";
+import UseStateDemo from "./components/DemoLopHoc/Hook/UseStateDemo";
+import CarSelector from "./components/DemoLopHoc/Hook/CarSelector";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<MyClock />);
+root.render(<CarSelector />);
