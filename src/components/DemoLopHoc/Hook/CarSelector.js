@@ -4,8 +4,8 @@ export default function CarSelector() {
   const listCars = ["BMW", "Audi", "Porsche", "Mercedes"];
   const listColors = ["Black", "White", "Red", "Pink", "yellow"];
 
-  const [car, setCar] = useState("");
-  const [color, setColor] = useState("");
+  const [car, setCar] = useState(listCars[0]);
+  const [color, setColor] = useState(listColors[0]);
   const handleSelectCar = (e) => {
     setCar(e.target.value);
   };
