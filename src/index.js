@@ -7,7 +7,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import CarSelector from "./components/DemoLopHoc/Hook/CarSelector";
 import Timer from "./components/DemoLopHoc/Hook/Timer/Timer";
 import UseEffectF8 from "./components/Testing/UseEffectF8";
+import Effect from './components/Testing/PracticeZone/Effect'
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<UseEffectF8 />);
+root.render(<Effect />);
