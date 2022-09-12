@@ -7,7 +7,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import FormikWithYup from "./components/DemoLopHoc/ReactForm/FormikWithYup";
 import ContactForm from "./components/DemoLopHoc/ReactForm/ContactForm";
 import LibraryManager from "./components/DemoLopHoc/ReactForm/LibraryManager";
+import LibraryManager2 from "./components/DemoLopHoc/ReactForm/LibraryManager2";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
-root.render(<LibraryManager />);
+root.render(<LibraryManager2 />);

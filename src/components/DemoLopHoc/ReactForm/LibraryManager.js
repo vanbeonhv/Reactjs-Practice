@@ -9,6 +9,7 @@ const LibraryManager = () => {
   });
 
   const [books, setBooks] = useState([]);
+
   const handleKeyUp = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
     console.log(book);
@@ -17,6 +18,7 @@ const LibraryManager = () => {
   const handleClick = () => {
     console.log(book);
     let inputValues = Object.values(book);
+    console.log(inputValues);
     let isEmpty = inputValues.every((value) => value !== "");
     if (isEmpty) {
       setBooks((prev) => {
@@ -24,6 +26,7 @@ const LibraryManager = () => {
         return newBooks;
       });
     }
+    console.log(books);
   };
   return (
     <div className="ms-3">
