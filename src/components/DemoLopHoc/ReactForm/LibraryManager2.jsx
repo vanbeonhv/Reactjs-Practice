@@ -1,90 +1,35 @@
 import React, { useState } from "react";
-import { ErrorMessage, Formik, Field, Form } from "formik";
-import * as Yup from "yup";
+import { Formik, Form, Field } from "formik";
 
-const booksSchema = Yup.object().shape({
-  title: Yup.string().required(),
-  author: Yup.string().required(),
-  quantity: Yup.number()
-    .min(1)
-    .max(100)
-    .required(),
-});
 const LibraryManager2 = () => {
-  const [form, setForm] = useState({ title: "", author: "", quantity: "" });
-  const [bookshelf, setBooksShelf] = useState([
-    { title: "Rung Than Khoc", author: "Thuc Linh", quantity: 3 },
-    { title: "Khe Uoc Ban Dau", author: "Mai Mun", quantity: 5 },
-  ]);
-  const [mode, setMode] = useState({ mode: "add", action: "submit" });
-  const deleteBook = (index) => {
-    const newBookshelf = bookshelf.filter((currentValue, key) => key !== index);
-    setBooksShelf(newBookshelf);
-  };
-
-  const editBook = (index) => {
-    setMode({ mode: "edit", action: "Edit" });
-    setForm(bookshelf[index]);
-    console.log();
-  };
+  const [form, setForm] = useState({
+    title: "",
+    author: "",
+    quantity: "",
+  });
   return (
-    <div className="container">
-      <Formik
-        initialValues={form}
-        validationSchema={booksSchema}
-        onSubmit={(value, { resetForm }) => {
-          switch (mode) {
-            case "add":
-              setBooksShelf(...bookshelf, value);
-              resetForm();
-              break;
-            case "add":
-              setBooksShelf(...bookshelf, value);
-              resetForm();
-              break;
-          }
-        }}
-      >
+    <div className="mx-3">
+      <Formik initialValues={{ form }}>
         <Form>
-          <Field
-            name="title"
-            placeholder="Enter a title"
-            value={form.title || ""}
-          />
+          <h1>Library</h1>
+          <label htmlFor="title">Tiêu đề</label>
           <br />
-          <ErrorMessage component="div" className="text-danger" name="title" />
+          <Field name="title"></Field>
           <br />
-
-          <Field
-            name="author"
-            placeholder="Enter an author"
-            value={form.author || ""}
-          />
+          <label htmlFor="author">Tác giả</label>
           <br />
-          <ErrorMessage component="div" className="text-danger" name="author" />
+          <Field name="author"></Field>
           <br />
-
-          <Field
-            name="quantity"
-            placeholder="Enter the quantity"
-            value={form.quantity || ""}
-          />
+          <label htmlFor="quantity">Số lượng</label>
           <br />
-          <ErrorMessage
-            component="div"
-            className="text-danger"
-            name="quantity"
-          />
-
-          <button type="submit" className="mb-4 btn btn-success">
-            {mode.action}
-          </button>
-          <button type="reset" className="mb-4 btn btn-secondary">
-            Reset
-          </button>
+          <Field name="quantity"></Field>
+          <br />
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
         </Form>
       </Formik>
-      <table className="table table-hover table-triped table-bordered">
+
+      <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
             <th>Tiêu đề</th>
@@ -94,27 +39,24 @@ const LibraryManager2 = () => {
           </tr>
         </thead>
         <tbody>
-          {bookshelf.map((book, index) => (
-            <tr key={index}>
-              <td>{book.title}</td>
-              <td>{book.author}</td>
-              <td>{book.quantity}</td>
-              <td>
-                <button
-                  className="btn btn-primary mx-1"
-                  onClick={() => editBook(index)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="btn btn-danger mx-1"
-                  onClick={() => deleteBook(index)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
+          <tr>
+            <td>Rich Dad Poor Dad</td>
+            <td>Robert Kiyosaki</td>
+            <td>5</td>
+            <td>
+              <button className="btn btn-primary mx-1">Edit</button>
+              <button className="btn btn-danger mx-1">Delelte</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Think and grow rich</td>
+            <td>Napoleon Hill</td>
+            <td>3</td>
+            <td>
+              <button className="btn btn-primary mx-1">Edit</button>
+              <button className="btn btn-danger mx-1">Delete</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
