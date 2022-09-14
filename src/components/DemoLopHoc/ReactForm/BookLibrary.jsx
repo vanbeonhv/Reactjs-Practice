@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 
 const booksSchema = Yup.object().shape({
@@ -44,11 +44,14 @@ export const BookLibrary = () => {
             // console.log(mode);
             bookShelf.push(value);
             setBookshelf([...bookShelf]);
-            resetForm();
+            setForm({ title: "", author: "", quantity: "" });
           } else {
             bookShelf[mode.selectedIndex] = value;
-            setBookshelf([...bookShelf]);
+            console.log(bookShelf);
+            setBookshelf(bookShelf);
+            // setBookshelf([...bookShelf]);
             setMode({ status: "add", action: "Submit", selectedIndex: null });
+            setForm({ title: "", author: "", quantity: "" });
           }
           // console.log(bookShelf);
         }}

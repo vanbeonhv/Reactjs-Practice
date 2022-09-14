@@ -23,7 +23,7 @@ const LibraryManager2 = () => {
   };
 
   const handleEdit = (index) => {
-    setMode({ status: "edit", action: "Edit" });
+    setMode({ status: "edit", action: "Edit", selectedIndex: index });
   };
 
   const handleDelete = (index) => {
@@ -52,7 +52,8 @@ const LibraryManager2 = () => {
               resetForm();
               break;
             case "edit":
-              setForm(bookShelf[index]);
+              bookShelf[mode.selectedIndex] = value;
+              setForm([...bookShelf]);
           }
         }}
       >
