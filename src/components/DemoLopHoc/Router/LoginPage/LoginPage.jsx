@@ -24,6 +24,23 @@ const LoginPage = () => {
       setValid("d-block");
     }
   };
+  const [data, setData] = useState({ email: "", password: "" });
+  const [valid, setValid] = useState("d-none");
+  const handleInput = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (data.email === "admin@gmail.com" && data.password === "letmein") {
+      navigate("/homepage");
+
+      setValid("d-none");
+    } else {
+      setValid("d-block");
+    }
+  };
   return (
     <div
       style={{
