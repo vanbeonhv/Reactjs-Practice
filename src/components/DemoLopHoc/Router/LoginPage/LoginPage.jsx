@@ -1,17 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { date } from "yup/lib/locale";
 
 const LoginPage = () => {
   const [data, setData] = useState({ email: "", password: "" });
   const [valid, setValid] = useState("d-none");
   const handleInput = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-
-    state: {
-      data;
-    }
 
     console.log(data);
   };
@@ -20,23 +15,6 @@ const LoginPage = () => {
   const handleSubmit = () => {
     if (data.email === "admin@gmail.com" && data.password === "letmein") {
       navigate("/homepage");
-    } else {
-      setValid("d-block");
-    }
-  };
-  const [data, setData] = useState({ email: "", password: "" });
-  const [valid, setValid] = useState("d-none");
-  const handleInput = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
-  };
-
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (data.email === "admin@gmail.com" && data.password === "letmein") {
-      navigate("/homepage");
-
-      setValid("d-none");
     } else {
       setValid("d-block");
     }
