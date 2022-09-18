@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
 
 const LoginPage = () => {
   const [data, setData] = useState({ email: "", password: "" });
@@ -12,7 +13,8 @@ const LoginPage = () => {
   };
 
   const navigate = useNavigate();
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (data.email === "admin@gmail.com" && data.password === "letmein") {
       navigate("/homepage");
     } else {
@@ -21,6 +23,7 @@ const LoginPage = () => {
   };
   return (
     <div
+      className="vh-100"
       style={{
         backgroundColor: "#007bff",
         backgroundImage: "linear-gradient(to right, #0062E6, #33AEFF)",
@@ -98,6 +101,10 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <Routes>
+        <Route path="/" />
+        <Route path="/homePage" element={<HomePage />} />
+      </Routes>
     </div>
   );
 };
